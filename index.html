@@ -11,23 +11,59 @@
   <link rel="stylesheet" href="assets\css\TexasHouse.css">
   <script src="assets\js\TexasHouse.js" defer></script>
   <script src="assets\js\cart.js" defer></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+  const sections = document.querySelectorAll("section, .hero, .container, .images, .booking, .menu, .Reviews, .contact-section");
+  const navLinks = document.querySelectorAll(".nav-link");
+  const offset = 80;
+
+  function highlightNav() {
+      let scrollPos = window.scrollY + offset;
+      let currentSection = "";
+
+      sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+
+          if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+              currentSection = section.getAttribute("id");
+          }
+      });
+
+      navLinks.forEach(link => {
+          link.classList.remove("active");
+          if (link.getAttribute("href").toLowerCase() === `#${currentSection}`.toLowerCase()) {
+              link.classList.add("active");
+          }
+      });
+  }
+
+  window.addEventListener("scroll", highlightNav);
+});
+
+
+</script>
+
+
+
 </head>
 
 <body>
   <!-- navbar-->
   <nav class="navbar" id="navbar">
     <ul class="navbar-nav">
-      <li><a href="#home" class="active">Home</a></li>
-      <li><a href="#About">About</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#booking">Book-Table</a></li>
+      <li><a href="#home" class="nav-link" class="active">Home</a></li>
+      <li><a href="#About" class="nav-link">About</a></li>
+      <li><a href="#gallery" class="nav-link">Gallery</a></li>
+      <li><a href="#booking" class="nav-link">Book-Table</a></li>
     </ul>
     <div id="img-toggle"><img class="logo" id="logo" src="assets/img/Texas-House-1test - Copy.jpg"></div>
     <ul class="navbar-nav">
       <li><button class="cart-button" onclick="toggleCart()">Cart(<span id="cart-count">0</span>)</span></button></li>
-      <li><a href="#menu">Menu</a></li>
-      <li><a href="#Reviews">Reviews</a></li>
-      <li><a href="#">Contact Us</a></li>
+      <li><a href="#menu" class="nav-link">Menu</a></li>
+      <li><a href="#Reviews" class="nav-link">Reviews</a></li>
+      <li><a href="#contact-section" class="nav-link">Contact Us</a></li>
 
     </ul>
   </nav>
@@ -62,7 +98,8 @@
 
     </div>
   </div>
-  <div id="gallery">
+  <div class="images" id="gallery" >
+  <div >
     <h2 class="ourgallery"> OUR GALLERY</h2>
   </div>
   <div class="gallery">
@@ -78,6 +115,7 @@
     <div width=25%><img src="assets/img/gallary10.jpg" /></div>
     <div width=25%><img src="assets/img/gallary11.jpg" /></div>
     <div width=25%><img src="assets/img/gallary12.jpg" /></div>
+  </div>
   </div>
   <!--book a table-->
   <div id="booking" class="booking">
@@ -96,6 +134,7 @@
     <div id="message" class="message"></div>
   </div>
   <!--menu-->
+  <div class="foods">
   <div class="menu" id="menu">
     <h2>Restaurant Menu</h2>
     <div class="menu-buttons">
@@ -134,6 +173,7 @@
       <div class="item" data-name="Brownies" data-price="7">Brownies - $9</div>
     </div>
   </div>
+</div>
 
   <!--Modal for confirmation-->
   <div id="confirmation-modal" class="modal">
@@ -173,7 +213,7 @@
       <a href="survey.html">Leave Yours Here</a>
     </div>
   </section>
-  <div class="contact-section">
+  <div class="contact-section" id="contact-section">
     <!-- Google Map -->
     <div class="map-wrapper">
         <div id="map" style="width: 100%; height: 100%;"></div>
@@ -215,6 +255,7 @@
       <p>© Copyright 2025 Made with ❤️ By Haidar Habach, Hassan Jakmara, Mohamad Ali Hammoud</p>
   </div>
 </footer>
+</div>
 </body>
 
 </html>
