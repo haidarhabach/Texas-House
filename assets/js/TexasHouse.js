@@ -27,11 +27,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   images.forEach(img => {
     img.addEventListener("click", (event) => {
-      // Remove zoom from other images
-      images.forEach(i => i.classList.remove("zoomed"));
-
-      // Toggle zoom for the clicked image
-      event.target.classList.toggle("zoomed");
+      // If the image is zoomed, remove the zoom
+      if (event.target.classList.contains("zoomed")) {
+        event.target.classList.remove("zoomed");
+      } else {
+        // Remove zoom from all other images
+        images.forEach(i => i.classList.remove("zoomed"));
+        
+        // Add zoom to the clicked image
+        event.target.classList.add("zoomed");
+      }
     });
   });
 
@@ -151,3 +156,5 @@ function initMap() {
   });
   var marker = new google.maps.Marker({ position: location, map: map });
 }
+
+
