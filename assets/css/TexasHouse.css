@@ -612,6 +612,10 @@ body {
 .survey a:hover{
   background-color: #ff3333;
 }
+.submit-btn:hover {
+  background-color: #ff3333;
+  transform: scale(1.1);
+}
 
 /*contact us*/
 .contact-section {
