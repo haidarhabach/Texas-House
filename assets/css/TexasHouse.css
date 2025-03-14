@@ -200,8 +200,11 @@ body {
   width: 100%;
   aspect-ratio: 1;
   object-fit: cover;
+  transition: opacity 0.3s ease;
 }
-
+.gallery:hover{
+  opacity: 0.5;
+}
 .ourgallery {
   display: flex;
   font-size: 65px;
