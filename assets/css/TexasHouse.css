@@ -200,10 +200,28 @@ body {
   width: 100%;
   aspect-ratio: 1;
   object-fit: cover;
-  transition: opacity 0.3s ease;
 }
-.gallery div img:hover{
-  opacity: 0.5;
+
+
+.gal img {
+ 
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition for both opacity and zoom */
+}
+
+.gal img:hover {
+  opacity: 0.4;
+}
+
+.gal img.zoomed {
+  opacity: 1 !important; /* Keep the opacity at 1 when zoomed */
+  transform: scale(2); /* Zoom effect */
+  position: fixed; /* Fix the image in place */
+  top: 50%; /* Vertically center the image */
+  left: 50%; /* Horizontally center the image */
+  transform: translate(-50%, -50%) scale(2); /* Center the image and apply zoom */
+  z-index: 1000; /* Make sure the zoomed image appears on top */
+  max-width: 20vw; /* Ensure it doesn't overflow the viewport */
+  max-height: 40vh; /* Ensure it doesn't overflow the viewport */
 }
 .ourgallery {
   display: flex;
@@ -614,10 +632,6 @@ body {
 
 .survey a:hover{
   background-color: #ff3333;
-}
-.submit-btn:hover {
-  background-color: #ff3333;
-  transform: scale(1.1);
 }
 
 /*contact us*/
