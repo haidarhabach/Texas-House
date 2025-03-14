@@ -202,7 +202,7 @@ body {
   object-fit: cover;
   transition: opacity 0.3s ease;
 }
-.gallery img:hover{
+.gallery div img:hover{
   opacity: 0.5;
 }
 .ourgallery {
