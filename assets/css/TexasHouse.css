@@ -133,7 +133,6 @@ body {
 
 .btn:hover {
   background-color: #ff3333;
-  transform: scale(1.1); 
 }
 
 .container {
@@ -302,6 +301,7 @@ body {
 /* Hover Effect */
 .booking2 form button:hover {
   background: #ff3333;
+  transform: scale(1.1);
 }
 
 /*photo zoom */
