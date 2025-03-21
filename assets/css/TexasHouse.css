@@ -407,10 +407,9 @@ body {
 .checkout:hover,
 .clear-cart:hover {
   background-color: #ff3333;
-}
-.menu-buttons button:hover{
   transform: scale(1.1);
 }
+
 .cart {
   display: none;
   position: fixed;
