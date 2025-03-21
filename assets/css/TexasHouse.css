@@ -409,7 +409,7 @@ body {
   background-color: #ff3333;
 }
 .menu-buttons button:hover{
-  transform:scale(1.1);
+  transform: scale(1.1);
 }
 .cart {
   display: none;
