@@ -409,7 +409,10 @@ body {
   background-color: #ff3333;
   transform: scale(1.1);
 }
-
+.remove-button:hover{
+  background-color: #ff3333;
+  transform: scale(1.05);
+}
 .cart {
   display: none;
   position: fixed;
@@ -526,6 +529,7 @@ body {
 
 .modal button:hover{
   background-color: #ff3333;
+  transform: scale(1.1);
 }
 
 .remove-button{
